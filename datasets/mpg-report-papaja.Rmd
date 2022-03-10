@@ -76,7 +76,7 @@ mpg.by.tr <- ggplot(mtcars.tidy,
 
 # Introduction
 
-In the `mtcars` dataset [@henderson1981building] there are `r nrow(mtcars)` cars documented, from `r length(unique(mtcars$brand))` brands. The unique car types documented are: `r paste(c(paste(rownames(mtcars[1:nrow(mtcars)-1,]), collapse = ", "), ", and ", rownames(mtcars[nrow(mtcars),])), collapse = "")`. The mean mpg is `r mean(mtcars$mpg)` (median = `r median(mtcars$mpg)`; sd = `r sd(mtcars$mpg)`; range = `r min(mtcars$mpg)`--`r max(mtcars$mpg)`). The cars range in number of cylinders from `r min(mtcars$cyl)` to `r max(mtcars$cyl)`, though there are no cars with odd numbers of cylinders.
+In the `mtcars` dataset [@henderson1981building] there are `r nrow(mtcars)` cars documented, from `r length(unique(mtcars.tidy$brand))` brands. The unique car types documented are: `r paste(c(paste(rownames(mtcars[1:(nrow(mtcars)-1),]), collapse = ", "), ", and ", rownames(mtcars[nrow(mtcars),])), collapse = "")`. The mean mpg is `r round(mean(mtcars$mpg),0)` (median = `r median(mtcars$mpg)`; sd = `r sd(mtcars$mpg)`; range = `r min(mtcars$mpg)`--`r max(mtcars$mpg)`). The cars range in number of cylinders from `r min(mtcars$cyl)` to `r max(mtcars$cyl)`, though there are no cars with odd numbers of cylinders.
 
 ```{r summary-tbl, results = "asis"}
 mtcars.tidy %>%
